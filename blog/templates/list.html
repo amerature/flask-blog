@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+	<p style="position: fixed; right: 30px; top: 30px;"><a href="/add" style="color: black;font-size: 30px;">Add</a></p>
+
+    <h1>Posts</h1>
+    {% for post in posts %}
+    <h1 class="title">{{ post.title }} <span style="font-size: 10px;">{{ post.creation.strftime('%Y-%m-%d %H:%M') }}</span></h1>
+    <p>{{ post.text }}</p>
+    <p>{{ post.id }}</p>
+    
+    {% endfor %}
+{% endblock %}
