@@ -63,7 +63,7 @@ def new_post():
 #index page
 @app.route('/')
 def index():
-	#finds all posts and sorts in chronological order
+	#finds all posts and sorts in reverse chronological order
 	posts = db.Post.find().sort("creation", -1)
 	# displays posts on list template
 	return render_template('list.html', posts=posts)
